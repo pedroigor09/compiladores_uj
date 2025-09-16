@@ -25,8 +25,13 @@ export default function Home() {
   ]
 
   const handleTopicClick = (topicTitle: string) => {
-    console.log(`Navegando para: ${topicTitle}`)
-    // Aqui você pode implementar a navegação para páginas específicas
+    if (topicTitle === "Gramática Livre de Contexto") {
+      window.location.href = '/gramatica'
+    } else if (topicTitle === "Árvore Sintática") {
+      window.location.href = '/arvore'
+    } else if (topicTitle === "Ambiguidade") {
+      window.location.href = '/ambiguidade'
+    }
   }
 
   return (

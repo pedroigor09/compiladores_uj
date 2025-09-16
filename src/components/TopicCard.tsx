@@ -95,16 +95,23 @@ export function TopicCard({ title, description, icon, gradient, onClick }: Topic
       {/* Decorative elements */}
       <div 
         className={`
-          absolute top-4 right-4 w-20 h-20 border border-white/20 rounded-full
+          absolute top-8 right-8 w-24 h-24 border border-white/20 rounded-full
           transition-all duration-700 transform
           ${isHovered ? 'rotate-180 scale-110' : 'rotate-0 scale-100'}
         `} 
       />
       <div 
         className={`
-          absolute bottom-4 left-4 w-16 h-16 border border-white/10 rounded-full
+          absolute bottom-8 left-8 w-20 h-20 border border-white/10 rounded-full
           transition-all duration-500 transform delay-100
           ${isHovered ? '-rotate-90 scale-90' : 'rotate-0 scale-100'}
+        `} 
+      />
+      <div 
+        className={`
+          absolute top-1/3 left-12 w-16 h-16 border border-white/5 rounded-full
+          transition-all duration-800 transform delay-200
+          ${isHovered ? 'rotate-45 scale-125' : 'rotate-0 scale-100'}
         `} 
       />
     </Card>
