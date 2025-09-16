@@ -13,7 +13,7 @@ export default function QRCodeComponent({ url }: QRCodeComponentProps) {
   const [copied, setCopied] = useState(false)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   
-  const siteUrl = url || 'https://SEU_USUARIO.github.io/compiladores_uj'
+  const siteUrl = url || 'https://pedroigor09.github.io/compiladores_uj'
 
   useEffect(() => {
     generateQRCode()
