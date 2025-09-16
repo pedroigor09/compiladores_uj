@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Compiladores UJ - Site Educacional
 
-## Getting Started
+Este é um site educacional interativo sobre teoria de compiladores, desenvolvido para facilitar o aprendizado dos conceitos fundamentais.
 
-First, run the development server:
+## 🚀 Como fazer deploy no GitHub Pages
 
+### 1. Criar repositório no GitHub
+1. Acesse [github.com](https://github.com)
+2. Crie um novo repositório público chamado `compiladores_uj`
+3. **NÃO** inicialize com README, .gitignore ou licença
+
+### 2. Configurar o repositório local
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# No diretório do projeto
+git init
+git add .
+git commit -m "Initial commit - Site educacional de compiladores"
+git branch -M main
+git remote add origin https://github.com/SEU_USUÁRIO/compiladores_uj.git
+git push -u origin main
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Configurar GitHub Pages
+1. Vá para o repositório no GitHub
+2. Clique em **Settings** > **Pages**
+3. Em **Source**, selecione **GitHub Actions**
+4. O workflow já está configurado em `.github/workflows/deploy.yml`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Atualizar a URL no componente QR Code
+1. Edite o arquivo `src/components/QRCodeComponent.tsx`
+2. Na linha 15, substitua `SEU_USUÁRIO` pelo seu username do GitHub:
+```typescript
+const siteUrl = url || 'https://SEU_USUÁRIO.github.io/compiladores_uj'
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 5. Deploy automático
+Após fazer push para o branch `main`, o GitHub Actions irá:
+- Instalar as dependências
+- Fazer build do projeto
+- Fazer deploy para GitHub Pages
 
-## Learn More
+O site ficará disponível em: `https://SEU_USUÁRIO.github.io/compiladores_uj`
 
-To learn more about Next.js, take a look at the following resources:
+## 📱 Compartilhando com a turma
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### QR Code
+- Na página inicial, clique no ícone de compartilhar (Share)
+- Um QR Code será exibido com o link do site
+- Os alunos podem escanear com a câmera do celular
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Link direto
+- Copie e compartilhe: `https://SEU_USUÁRIO.github.io/compiladores_uj`
+- Funciona em qualquer navegador (desktop/mobile)
 
-## Deploy on Vercel
+## 🎯 Conteúdo Educacional
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 1. Gramática Livre de Contexto
+- Definição formal e conceitos
+- Visualizador interativo de produções
+- Quiz com 10 questões
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. Árvore Sintática
+- Diferenças entre CST e AST
+- Visualizador de árvores interativo
+- Comparação lado a lado
+- Quiz com 10 questões
+
+### 3. Ambiguidade
+- Demonstração de múltiplas interpretações
+- Problema do dangling else
+- Visualizações interativas
+- Quiz com 10 questões
+
+## 🛠️ Desenvolvimento Local
+
+```bash
+# Instalar dependências
+npm install
+
+# Rodar em modo desenvolvimento
+npm run dev
+
+# Build para produção
+npm run build
+
+# Preview do build
+npm start
+```
+
+## 📚 Tecnologias Utilizadas
+
+- **Next.js 15** - Framework React com App Router
+- **TypeScript** - Tipagem estática
+- **Tailwind CSS v4** - Styling
+- **shadcn/ui** - Componentes
+- **Lucide React** - Ícones
+- **QR Code.js** - Geração de QR codes
+
+## 🎨 Design
+
+Interface inspirada no Epic Games Store com:
+- Cards interativos em tela cheia
+- Efeitos de parallax
+- Animações suaves
+- Design responsivo
+- Tema dark moderno
+
+## 📞 Suporte
+
+Para dúvidas ou problemas:
+1. Verifique as configurações do GitHub Pages
+2. Confirme se o workflow do GitHub Actions executou sem erros
+3. Teste o link localmente antes do deploy
