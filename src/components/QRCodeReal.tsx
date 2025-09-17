@@ -37,8 +37,6 @@ export default function QRCodeComponent({ url }: QRCodeComponentProps) {
     }
   }
 
-
-
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(siteUrl)
