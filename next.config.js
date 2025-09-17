@@ -5,7 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: '.',
+  basePath: '/compiladores_uj',
+  assetPrefix: '/compiladores_uj/',
   eslint: {
     ignoreDuringBuilds: true,
   },

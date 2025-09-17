@@ -4,9 +4,11 @@ import { TopicCard } from "@/components/TopicCard"
 import QRCodeComponent from "@/components/QRCodeComponent"
 import { useState } from "react"
 import { Share2 } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 export default function Home() {
   const [showQR, setShowQR] = useState(false)
+  const router = useRouter()
   
   const topics = [
     {
@@ -31,11 +33,11 @@ export default function Home() {
 
   const handleTopicClick = (topicTitle: string) => {
     if (topicTitle === "Gramática Livre de Contexto") {
-      window.location.href = '/gramatica'
+      router.push('/gramatica')
     } else if (topicTitle === "Árvore Sintática") {
-      window.location.href = '/arvore'
+      router.push('/arvore')
     } else if (topicTitle === "Ambiguidade") {
-      window.location.href = '/ambiguidade'
+      router.push('/ambiguidade')
     }
   }
 
