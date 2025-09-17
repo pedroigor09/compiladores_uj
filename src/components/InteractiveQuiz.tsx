@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
@@ -151,22 +151,22 @@ export function InteractiveQuiz() {
     setSelectedAnswer(answerIndex)
   }
 
-  const handleNextQuestion = () => {
+  const handleNextQuestion = useCallback(() => {
     const question = questions[currentQuestion]
     
     if (question.type === 'multiple-choice' && selectedAnswer === question.correctAnswer) {
-      setScore(score + 1)
+      setScore(prev => prev + 1)
     }
     
     if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1)
+      setCurrentQuestion(prev => prev + 1)
       setSelectedAnswer(null)
       setShowExplanation(false)
       setOpenAnswer('')
     } else {
       setQuizCompleted(true)
     }
-  }
+  }, [currentQuestion, selectedAnswer])
 
   const handleShowExplanation = () => {
     setShowExplanation(true)

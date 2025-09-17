@@ -5,10 +5,12 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ProductionVisualizer } from "@/components/ProductionVisualizer"
 import { InteractiveQuiz } from "@/components/InteractiveQuiz"
+import { useRouter } from 'next/navigation'
 
 export default function GramaticaPage() {
   const [scrollY, setScrollY] = useState(0)
   const [currentSection, setCurrentSection] = useState(0)
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -31,7 +33,7 @@ export default function GramaticaPage() {
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Button 
             variant="ghost" 
-            onClick={() => window.location.href = '/'}
+            onClick={() => router.push('/')}
             className="text-white hover:bg-white/10"
           >
             ← Voltar

@@ -6,9 +6,11 @@ import { Card } from "@/components/ui/card"
 import { SyntaxTreeVisualizer } from "@/components/SyntaxTreeVisualizer"
 import { CSTvsAST } from "@/components/CSTvsAST"
 import { TreeQuiz } from "@/components/TreeQuiz"
+import { useRouter } from 'next/navigation'
 
 export default function ArvorePage() {
   const [scrollY, setScrollY] = useState(0)
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -40,7 +42,7 @@ export default function ArvorePage() {
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Button 
             variant="ghost" 
-            onClick={() => window.location.href = '/'}
+            onClick={() => router.push('/')}
             className="text-white hover:bg-white/10"
           >
             ← Voltar

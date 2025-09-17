@@ -6,9 +6,11 @@ import { Card } from "@/components/ui/card"
 import { AmbiguityVisualizer } from "@/components/AmbiguityVisualizer"
 import { DanglingElseDemo } from "@/components/DanglingElseDemo"
 import { AmbiguityQuiz } from "@/components/AmbiguityQuiz"
+import { useRouter } from 'next/navigation'
 
 export default function AmbiguidadePage() {
   const [scrollY, setScrollY] = useState(0)
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -119,7 +121,7 @@ export default function AmbiguidadePage() {
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Button 
             variant="ghost" 
-            onClick={() => window.location.href = '/'}
+            onClick={() => router.push('/')}
             className="text-white hover:bg-white/10"
           >
             ← Voltar
@@ -329,7 +331,7 @@ export default function AmbiguidadePage() {
         <div className="container mx-auto px-6">
           <p className="text-red-300 mb-4">Parabéns! Agora você entende os perigos e soluções da ambiguidade! 🎯</p>
           <Button 
-            onClick={() => window.location.href = '/'}
+            onClick={() => router.push('/')}
             className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white"
           >
             🏠 Voltar ao Menu Principal
