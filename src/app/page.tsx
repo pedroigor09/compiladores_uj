@@ -42,24 +42,24 @@ export default function Home() {
   }
 
   return (
-    <div className="h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen md:h-screen md:overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex flex-col">
       {/* Header */}
-      <header className="relative z-20 p-6 text-center bg-black/20 backdrop-blur-md">
+      <header className="relative z-20 p-4 md:p-6 text-center bg-black/20 backdrop-blur-md shrink-0">
         <div className="flex justify-between items-center max-w-6xl mx-auto">
           <div className="flex-1">
-            <h1 className="text-4xl font-bold text-white mb-2 tracking-tight">
+            <h1 className="text-2xl md:text-4xl font-bold text-white mb-1 md:mb-2 tracking-tight">
               Compiladores
             </h1>
-            <p className="text-lg text-slate-300">
+            <p className="text-sm md:text-lg text-slate-300">
               Escolha um tópico para explorar os fundamentos teóricos dos compiladores
             </p>
           </div>
           <button
             onClick={() => setShowQR(!showQR)}
-            className="ml-4 p-3 bg-white/10 hover:bg-white/20 rounded-lg backdrop-blur-sm transition-all duration-200 group"
+            className="ml-4 p-2 md:p-3 bg-white/10 hover:bg-white/20 rounded-lg backdrop-blur-sm transition-all duration-200 group shrink-0"
             title="Compartilhar com a turma"
           >
-            <Share2 className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
+            <Share2 className="w-5 h-5 md:w-6 md:h-6 text-white group-hover:scale-110 transition-transform" />
           </button>
         </div>
       </header>
@@ -79,10 +79,10 @@ export default function Home() {
         </div>
       )}
 
-      {/* Main Content - Full height cards */}
-      <main className="h-[calc(100vh-140px)] flex">
+      {/* Main Content - Responsive cards */}
+      <main className="flex-1 flex flex-col md:flex-row md:h-[calc(100vh-140px)]">
         {topics.map((topic, index) => (
-          <div key={topic.title} className="flex-1 relative">
+          <div key={topic.title} className="flex-1 relative min-h-[40vh] md:min-h-full">
             <TopicCard
               title={topic.title}
               description={topic.description}
